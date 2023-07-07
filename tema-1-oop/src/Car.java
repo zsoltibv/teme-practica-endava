@@ -12,6 +12,6 @@ public class Car extends AbstractPoweredVehicle{
 
     @Override
     public void drive(){
-
+        System.out.println("Driving a car!");
     }
 }

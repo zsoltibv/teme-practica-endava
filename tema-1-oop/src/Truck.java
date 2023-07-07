@@ -20,6 +20,6 @@ public class Truck extends Car{
 
     @Override
     public void drive(){
-
+        System.out.println("Driving truck!");
     }
 }
