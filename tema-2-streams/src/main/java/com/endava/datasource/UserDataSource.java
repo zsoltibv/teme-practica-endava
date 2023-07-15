@@ -99,11 +99,11 @@ public class UserDataSource {
     // Get the job of the oldest user
     public String getJobOfTheOldestUser() {
         // your code here
-        return users.stream()
-                .sorted((u1, u2) -> Integer.compare(u2.getAge(), u1.getAge()))
-                .map(User::getJob)
-                .findFirst()
-                .get();
+        Optional<String> jobOfOldestUser = users.stream()
+                .max(Comparator.comparingInt(User::getAge))
+                .map(User::getJob);
+
+        return jobOfOldestUser.orElseThrow(() -> new RuntimeException("No users found"));
     }
 
     // Get user (distinct) jobs sorted alphabetically
