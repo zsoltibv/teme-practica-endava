@@ -10,6 +10,6 @@ public class ForkLift implements IndustrialVehicle{
 
     @Override
     public void drive() {
-        System.out.println("Driving a bicycle!");
+        System.out.println("Driving a forklift!");
     }
 }
