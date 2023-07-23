@@ -19,7 +19,7 @@ public interface StudentService {
 
     Optional<Student> getStudentByAge(Integer age);
 
-    List<Student> changeFirstNameOfStudents();
+    Optional<List<Student>> changeFirstNameOfStudents();
 
     Optional<Student> deleteStudentWithFirstNameAndLastName(String firstName, String lastName);
 }

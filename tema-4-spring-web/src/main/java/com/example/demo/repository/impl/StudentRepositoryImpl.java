@@ -88,7 +88,7 @@ public class StudentRepositoryImpl implements StudentRepository {
     }
 
     @Override
-    public List<Student> changeFirstNameOfStudents() {
+    public Optional<List<Student>> changeFirstNameOfStudents() {
         List<Student> students = this.students.stream()
                 .filter(student -> student.getAge() > 30)
                 .map(student -> {
@@ -97,7 +97,7 @@ public class StudentRepositoryImpl implements StudentRepository {
                 })
                 .toList();
 
-        return students;
+        return Optional.of(students);
     }
 
     @Override

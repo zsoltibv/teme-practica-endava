@@ -41,7 +41,7 @@ public class StudentController {
         if (removedStudent.isPresent()) {
             return new ResponseEntity<>(removedStudent.get(), HttpStatus.OK);
         }
-        return new ResponseEntity<>("Student with lastName " + lastName + " was not found in our list", HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>("Student with lastName " + lastName + " was not found in our list", HttpStatus.NOT_FOUND);
     }
     //update a student with lastName = 'x'
 
@@ -52,7 +52,7 @@ public class StudentController {
             return new ResponseEntity<>(updatedStudent.get(), HttpStatus.OK);
         }
 
-        return new ResponseEntity<>("Student with lastName " + student.getLastName() + " was not found in our list", HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>("Student with lastName " + student.getLastName() + " was not found in our list", HttpStatus.NOT_FOUND);
     }
 
     //patch the age of a student with lastName = 'x' to be 39
@@ -63,7 +63,7 @@ public class StudentController {
             return new ResponseEntity<>(studentPatched.get(), HttpStatus.OK);
         }
 
-        return new ResponseEntity<>("Student with lastName " + lastName + " was not found in our list", HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>("Student with lastName " + lastName + " was not found in our list", HttpStatus.NOT_FOUND);
     }
 
     //get student by lastName -> "Bularca" using path variable
@@ -75,7 +75,7 @@ public class StudentController {
             return new ResponseEntity<>(studentFound, HttpStatus.OK);
         }
 
-        return new ResponseEntity<>("Student with lastName " + lastName + " was not found in our list", HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>("Student with lastName " + lastName + " was not found in our list", HttpStatus.NOT_FOUND);
     }
 
     //get student by age -> 18 using request param
@@ -87,13 +87,13 @@ public class StudentController {
             return new ResponseEntity<>(studentFound, HttpStatus.OK);
         }
 
-        return new ResponseEntity<>("Student with age " + age + " was not found in our list", HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>("Student with age " + age + " was not found in our list", HttpStatus.NOT_FOUND);
     }
 
     //change the firstName of all students that are having the age higher than 30 to "Happy Coding"
     @PatchMapping("/change")
-    public ResponseEntity<List<Student>> changeFirstNameOfStudents(){
-        List<Student> students = this.studentService.changeFirstNameOfStudents();
+    public ResponseEntity<Object> changeFirstNameOfStudents(){
+        Optional<Optional<List<Student>>> students = Optional.ofNullable(this.studentService.changeFirstNameOfStudents());
         return new ResponseEntity<>(students, HttpStatus.OK);
     }
 
@@ -105,6 +105,6 @@ public class StudentController {
         if (removedStudent.isPresent()) {
             return new ResponseEntity<>(removedStudent.get(), HttpStatus.OK);
         }
-        return new ResponseEntity<>("Student with first name " + firstName + "and last name" + lastName + " was not found in our list", HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>("Student with first name " + firstName + "and last name" + lastName + " was not found in our list", HttpStatus.NOT_FOUND);
     }
 }

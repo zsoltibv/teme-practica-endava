@@ -52,7 +52,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> changeFirstNameOfStudents() {
+    public Optional<List<Student>> changeFirstNameOfStudents() {
         return this.studentRepository.changeFirstNameOfStudents();
     }
 
