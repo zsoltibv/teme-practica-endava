@@ -35,7 +35,7 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 AppConfig.class);
 
-        TaskService taskService = context.getBean("taskService", TaskService.class);
+        TaskService taskService = context.getBean(TaskService.class);
 
         displayAllTasks(taskService);
         findTask(taskService, 5);

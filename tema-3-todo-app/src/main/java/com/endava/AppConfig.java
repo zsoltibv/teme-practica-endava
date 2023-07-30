@@ -3,9 +3,7 @@ package com.endava;
 import com.endava.model.Task;
 import com.endava.repository.TaskRepository;
 import com.endava.service.TaskService;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @ComponentScan(value = "com.endava")

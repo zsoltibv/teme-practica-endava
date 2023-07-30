@@ -9,10 +9,11 @@ import java.util.Optional;
 
 @Service
 public class TaskService {
-  private final TaskRepository taskRepository;
+    private final TaskRepository taskRepository;
 
     public TaskService(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
+        System.out.println("in task constructor");
     }
 
     public List<Task> getTasks() {
