@@ -243,6 +243,33 @@ article {
   }
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-list {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 8px;
+}
+@media only screen and (max-width: 768px) {
+  footer .footer-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+}
+footer .footer-list a {
+  text-decoration: none;
+}
+
 .dark-mode {
   background-color: #1a1a1a;
 }
