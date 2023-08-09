@@ -1,0 +1,21 @@
+@import "../styles/Variables.scss";
+
+.navStyles {
+  background-color: $base-color-light;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .navItems {
+    display: flex;
+    gap: 2rem;
+    a {
+      color: $base-color;
+      font-weight: 500;
+      text-decoration: none;
+      &.active{
+        color: white;
+      }
+    }
+  }
+}

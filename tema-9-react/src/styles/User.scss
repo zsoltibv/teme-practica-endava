@@ -1,0 +1,33 @@
+@import "../styles/Variables.scss";
+
+.userCardStyles, .userPageStyles{
+  background-color: $base-color;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 30px;
+}
+
+.userPageStyles{
+    padding: 30px 70px;
+}
+
+.usersGridStyles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+  }
+
+  @media only screen and (max-width: 768px) and (max-width: 1200px) {
+    grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+  }
+
+  gap: 40px;
+  margin-top: 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
