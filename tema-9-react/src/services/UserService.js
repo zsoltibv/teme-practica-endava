@@ -15,3 +15,13 @@ export const getUser = async (id) => {
   }
   throw new Error("something went wrong");
 };
+
+export const deleteUser = async (id) => {
+  const response = await fetch(`${API_BASE_URL}/users/${id}`, {
+    method: "DELETE",
+  });
+  if (response.ok) {
+    return await response.json();
+  }
+  throw new Error("something went wrong");
+};

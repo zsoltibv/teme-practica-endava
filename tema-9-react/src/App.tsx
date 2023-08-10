@@ -8,6 +8,7 @@ import "./styles/App.scss";
 import Nav from "./components/common/Nav";
 import UsersIndex from "./components/user/UsersIndex";
 import User from "./components/user/User";
+import AdminsIndex from "./components/admin/AdminsIndex";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
             <Route path="/" element={<UsersIndex />} />
             <Route path=":id" element={<User />} />
             <Route path="*" element={<Navigate to="/" />} />
+
+            <Route path="/admin" element={<AdminsIndex />} />
           </Routes>
         </div>
       </Router>
