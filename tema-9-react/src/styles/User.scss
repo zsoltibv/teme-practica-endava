@@ -1,6 +1,7 @@
 @import "../styles/Variables.scss";
 
-.userCardStyles, .userPageStyles{
+.userCardStyles,
+.userPageStyles {
   background-color: $base-color;
   color: white;
   padding: 20px;
@@ -8,8 +9,8 @@
   line-height: 30px;
 }
 
-.userPageStyles{
-    padding: 30px 70px;
+.userPageStyles {
+  padding: 30px 70px;
 }
 
 .usersGridStyles {
@@ -29,5 +30,20 @@
 
   a {
     text-decoration: none;
+  }
+}
+
+.goBackButton {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 20px;
+  button {
+    background-color: white;
+    padding: 10px 60px;
+    border-radius: 5px;
+    font-weight: 600;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

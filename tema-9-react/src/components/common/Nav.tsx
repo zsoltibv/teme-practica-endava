@@ -6,7 +6,7 @@ const Nav = () => {
     <nav className="navStyles">
       <div className="logoArea">
         <a href="/">
-          <img src="src\assets\react.svg" alt="" />
+          <img src="/src/assets/react.svg" alt="" />
         </a>
       </div>
       <div className="navItems">

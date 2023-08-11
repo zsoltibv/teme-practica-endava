@@ -8,7 +8,6 @@ const UsersIndex = () => {
     (async () => {
       const data = await getUsers();
       setUsers(data);
-      console.log(data);
     })();
   }, []);
 

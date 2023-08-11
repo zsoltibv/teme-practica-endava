@@ -9,6 +9,7 @@ import Nav from "./components/common/Nav";
 import UsersIndex from "./components/user/UsersIndex";
 import User from "./components/user/User";
 import AdminsIndex from "./components/admin/AdminsIndex";
+import AddOrEditUser from "./components/admin/AddOrEditUser";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
             <Route path="*" element={<Navigate to="/" />} />
 
             <Route path="/admin" element={<AdminsIndex />} />
+            <Route path="/admin/new" element={<AddOrEditUser />} />
+            <Route path="/admin/:id" element={<AddOrEditUser />} />
           </Routes>
         </div>
       </Router>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import UserCard from "./UserCard";
 import { deleteUser, getUsers } from "../../services/UserService";
+import "../../styles/Admin.scss";
+import { Link } from "react-router-dom";
 
 const AdminsIndex = () => {
   const [users, setUsers] = useState(null);
@@ -8,7 +10,6 @@ const AdminsIndex = () => {
     (async () => {
       const data = await getUsers();
       setUsers(data);
-      console.log(data);
     })();
   }, []);
 
@@ -19,6 +20,7 @@ const AdminsIndex = () => {
   async function removeUser(id) {
     try {
       await deleteUser(id);
+      alert(`Deleted user with id: ${id}`);
       setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -26,11 +28,16 @@ const AdminsIndex = () => {
   }
 
   return (
-    <div className="usersGridStyles">
-      {users.map((item) => (
-        <UserCard key={item.id} user={item} removeUser={removeUser}/>
-      ))}
-    </div>
+    <>
+      <Link to={`/admin/new`} className="buttonsGroup createNewButton">
+        <button>Create new</button>
+      </Link>
+      <div className="usersGridStyles">
+        {users.map((item) => (
+          <UserCard key={item.id} user={item} removeUser={removeUser} />
+        ))}
+      </div>
+    </>
   );
 };
 
